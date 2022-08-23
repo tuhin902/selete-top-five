@@ -28,6 +28,7 @@ function addToList(element) {
 
     playerArray.push(playerName);
     display(playerArray);
+
 }
 document.getElementById('calculate-btn').addEventListener('click', function () {
 
@@ -79,4 +80,5 @@ document.getElementById('calculate-total-btn').addEventListener('click', functio
 
 
 })
+
 
