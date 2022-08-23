@@ -43,52 +43,40 @@ function playerExpense() {
     perPlayerField.value = '';
 
     const playerExpenseTotal = document.getElementById('player-expense');
-    const previousPlayerExpenseTotalString = playerExpenseTotal.innerText;
-    const previousPlayerExpenseTotal = parseFloat(previousPlayerExpenseTotalString);
+    // const previousPlayerExpenseTotalString = playerExpenseTotal.innerText;
+    // const previousPlayerExpenseTotal = parseFloat(previousPlayerExpenseTotalString);
 
     const tableBody = document.getElementById('selected-name');
     const playerTotalExpense = perPlayerAmount * tableBody.childNodes.length;
     playerExpenseTotal.innerText = playerTotalExpense;
-    // return playerTotalExpense;
+
 }
 
 document.getElementById('calculate-total-btn').addEventListener('click', function () {
 
-    const perPlayerField = document.getElementById('per-player');
-    const perPlayerAmountString = perPlayerField.value;
-    const perPlayerAmount = parseFloat(perPlayerAmountString);
-    perPlayerField.value = '';
 
     const playerExpenseTotal = document.getElementById('player-expense');
-    const previousPlayerExpenseTotalString = playerExpenseTotal.innerText;
-    const previousPlayerExpenseTotal = parseFloat(previousPlayerExpenseTotalString);
-
-    const tableBody = document.getElementById('selected-name');
-    const playerTotalExpense = perPlayerAmount * tableBody.childNodes.length;
-    playerExpenseTotal.innerText = playerTotalExpense;
-    const playerCostString = playerTotalExpense.innerText;
-    const playerCost = parseFloat(playerCostString);
-    console.log(playerCost);
-
+    const playerExpenseTotalString = playerExpenseTotal.innerText;
+    const playerExpenseTotalvalue = parseFloat(playerExpenseTotalString);
 
     // Manager amount 
     const managerField = document.getElementById('manager-field');
     const managerAmountString = managerField.value;
     const managerAmount = parseFloat(managerAmountString);
     managerField.value = '';
-    console.log(managerAmount)
     // Coach amount 
     const coachField = document.getElementById('coach-field');
     const coachAmountString = coachField.value;
     const coachAmount = parseFloat(coachAmountString);
     coachField.value = '';
-    console.log(coachAmount)
+
     // const playerCostSring = playerTotalExpense.innerText;
     // const playerCost = parseFloat(playerCostSring);
 
-    const totalExpenses = playerTotalExpense + managerAmount + coachAmount;
+    const totalExpenses = playerExpenseTotalvalue + managerAmount + coachAmount;
+    const getTotal = document.getElementById('total-expenses');
+    getTotal.innerText = totalExpenses;
 
-    console.log(totalExpenses);
 
 })
 
